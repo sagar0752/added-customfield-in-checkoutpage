@@ -1,0 +1,19 @@
+<?php
+
+$customFields = $block->getCustomFields($block->getOrder());
+?>
+<?php if($customFields): ?>
+    <div class="block block-order-details-view">
+        <div class="block-content">
+            <div class="box">
+                <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Other information') ?></span></strong>
+                <div class="box-content">
+                    <strong><?php /* @escapeNotVerified */ echo __('Pickup Location.') ?>:</strong>
+                    <?php echo $this->escapeHtml($customFields->getPickupLocation()); ?><br>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,20 @@
+<?php
+
+$customFields = $block->getOrderCustomFields();
+?>
+<?php if($customFields): ?>
+    <section class="admin__page-section">
+        <div class="admin__page-section-title">
+            <span class="title"><?php /* @escapeNotVerified */ echo __('Other information') ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <div class="order-information">
+                <div class="box">
+                    <strong class="box-title"><span><?php /* @escapeNotVerified */ echo __('Pickup Location.') ?></span></strong>
+                    <div class="box-content">
+                        <?php echo $this->escapeHtml($customFields->getPickupLocation()); ?>
+                    </div>
+                </div>
+        </div>
+    </section>
+<?php endif; ?>
